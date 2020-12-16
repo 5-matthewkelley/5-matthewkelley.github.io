@@ -5,20 +5,20 @@
 
           <style>
     body {
-        background: rgb(125, 198, 205);
+        background: rgb(230, 26, 11);
         color: rgb(45, 45, 45);
         padding: 10px;
         font-family: arial;
     }
     #all-contents {
-        max-width: 800px;
+        max-width: 1000px;
         margin: auto;
     }
 
     /* navigation menu */
     nav {
-        background: rgb(239, 80, 41);
-        margin: 0 auto;
+        background: rgb(2, 24, 3);
+        margin: 20px auto;
         display: flex;
         padding: 10px;
     }
@@ -43,7 +43,7 @@
 
     /* main container area beneath menu */
     main {
-        background: rgb(245, 238, 219);
+        background: rgb(36, 218, 178);
         display: flex;
     }
     .sidebar {
@@ -59,7 +59,7 @@
     }
     #interests {
         border: 4px silver ridge;
-        padding: 8px;
+        padding: 1px;
     }
     h2, h3 {
         margin: 0px;
@@ -72,21 +72,21 @@
         <!-- All content goes here -->
     <div id="all-contents">
         <nav>
-        <h1> It Be Like That Sometimes</h1>
-        <ul>
-            <li>
+        <h1>So any Way...</h1>
+        <ul id="nav-ul">
+            <li class="nav-li">
                 <a href="index.html"> Home </a>
             <li>
 
-            </li>
+            </li class="nav-li">
                  <a href="portfolio.html"> Portfolio </a>
             </li>
         </ul>
         </nav>
             <main>
                   <!-- Sidebar section -->
-                <div>
-                 <img src="20201215_085530.jpg">
+                <div class="sidebar">
+                 <img class="sidebar-img" src="20201215_085530.jpg">
                 </div>
                 
                 <!-- Content section -->
@@ -98,7 +98,7 @@
                     </p>
 
                     <!-- Interests section -->
-                        <div>
+                        <div class="content" id=interests>
                           <h3>Interests</h3>
                               <ul>
                                   <li>Video Games</li>
