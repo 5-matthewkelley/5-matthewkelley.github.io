@@ -2,12 +2,105 @@
 <html>
     <head> 
          <title>Matthew's Marvelous Website</title>
+         
+         <style>
+    body {
+        background: rgb(18, 6, 187);
+        color: rgb(45, 45, 45);
+        padding: 10px;
+        font-family: arial;
+    }
+    #all-contents {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    /* navigation menu */
+    nav {
+        background: rgba(255, 254, 253, 0.993);
+        margin: 0px auto;
+        margin-bottom: 20px;
+        display: flex;
+        padding: 10px;
+        border: 10px solid rgb(112, 56, 202);
+        border-radius: 25px;
+    }
+    h1 {
+        display: flex;
+        align-items: center;
+        color: rgb(9, 1, 15);
+        flex: 1;
+        margin: 0;
+    }
+    #nav-ul {
+        list-style-image: none;
+    }
+    .nav-li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    a {
+        text-decoration: none;
+        color: rgb(8, 8, 8);
+    }
+
+    /* main container area beneath menu */
+    main {
+        background: rgb(233, 90, 7);
+        display: flex;
+    }
+    .sidebar {
+        margin-right: 25px;
+        padding: 10px;
+    }
+    .sidebar-img {
+        width: 200px;
+    }
+    .content {
+        flex: 1;
+        padding: 15px;
+    }
+      /* portfolio styles */
+            .content h1 {
+                color: black;
+            }
+            
+            #portfolio {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            
+            #portfolio li {
+                background: rgb(177, 34, 9);
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            
+            #portfolio li:hover {
+                background: rgb(143, 226, 222);
+            } 
+            
+            #portfolio a {
+                text-decoration: none;
+                color: rgb(8, 8, 8);
+            }
+    #interests {
+        border: 5px silver ridge;
+        padding: 1px;
+        width: 200px;
+    }
+    h2, h3 {
+        margin: 0px;
+    }
+</style>
+
     </head>
 
     <body>
       <div id="all-contents">
         <nav>
-            <h1>Impressive I know right </h1>
+            <h1>This is My Site so Deal With it</h1>
             <ul id="nav-ul">
                 <li class="nav-li">
                   <a class="nav-a" href="index.html">Home</a>
@@ -20,8 +113,12 @@
 
         <main>
             <div class="content">
-                <h1>Portfolio</h1>
-
+                <h1>Games I Made</h1>
+                  <ul id="portfolio">
+                        <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
+                        <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
+                        <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
+                </ul>
             </div>
         </main>
     </div>
