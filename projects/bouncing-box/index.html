@@ -8,7 +8,7 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgba(34, 235, 151, 0.76);
 			font-size: 300%;
 			text-align: center;
 			display: block;
@@ -18,7 +18,7 @@
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-
+      
 </head>
 <body class="board">
 	<!-- HTML for the box -->
@@ -51,14 +51,20 @@
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
 				box.text(newText);
+            }
+            function moveBoxTo(boardWidth) {
+				box.css("left",boardWidth);
 			}
+
 
 			//////////////////////////////////////////////////////////////////
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+            var positionX = 0;
+            var points = 0;
+            var speed = 10;
 
 			
 			/* 
@@ -66,22 +72,34 @@
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			function update() {
-				
-
-			};
+            function update() {  
+                positionX = positionX + speed;
+                moveBoxTo(positionX)
+               if (positionX > boardWidth ) { 
+                   speed = -speed;
+               } 
+               if (positionX < 0 ) { 
+                   speed = -speed;
+               } 
+        	};
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
-			function handleBoxClick() {
-				
+            function handleBoxClick() { 
+                positionX = 0;    
+                points++;            
+                changeBoxText(points);
+                speed +=3;
+                
+            };
+            
 
 
-			};
-		})();
+
+    })();
 	</script>
 </body>
 </html>

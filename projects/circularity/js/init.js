@@ -19,15 +19,24 @@ var init = function (window) {
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
         
-        // TODO 1 : Declare and initialize our variables
-
+         // TODO 1 : Declare and initialize our variables
+        var circle;			// variable to hold a single circle when creating circles / iterating
+        var circles = [1];	// variable to store all circles in one Array
 
         // TODO 2 : Create a function that draws a circle 
-        
+        function drawCircle () {
+        circle = draw.randomCircleInArea(canvas, true, false, '#ffffff', 1);
+        physikz.addRandomVelocity(circle, canvas, 1, 1);
+        view.addChild(circle);
+        circles.push(circle);
+        }
 
         // TODO 3 / 7 : Call the drawCircle() function 
-
-
+        var loopsCompleted = 0; 
+        while (loopsCompleted < 420) {
+        drawCircle();
+        loopsCompleted++
+        }
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -39,15 +48,16 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-
-            
+        for (var circleMove = 0; circleMove < circles.length; circleMove++) {
+            physikz.updatePosition(circles[circleMove]);
+            game.checkCirclePosition(circles[circleMove]);
+        }
+        
             // TODO 5 : Call game.checkCirclePosition() on your circles.
            
 
             // TODO 8 : Iterate over the array
-           
-            
-        }
+    }  
     
         /* 
         This Function should check the position of a circle that is passed to the 
@@ -57,9 +67,18 @@ var init = function (window) {
         game.checkCirclePosition = function(circle) {
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-            if ( circle.x > canvas.width ) {
-                circle.x = 0;
-            }
+            if (circle.x > canvas.width) {
+            circle.x = 0;
+           }
+           if (circle.x < 0) {
+            circle.x = canvas.width;
+           }
+           if (circle.y > canvas.height) {
+	        circle.y = 0;
+           }
+           if (circle.y < 0) {
+            circle.y = canvas.height;
+           }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             
@@ -84,9 +103,11 @@ var init = function (window) {
     }
 };
 
+
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = init;
 }
+
