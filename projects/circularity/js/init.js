@@ -26,14 +26,14 @@ var init = function (window) {
         // TODO 2 : Create a function that draws a circle 
         function drawCircle () {
         circle = draw.randomCircleInArea(canvas, true, false, '#ffffff', 1);
-        physikz.addRandomVelocity(circle, canvas, 1, 1);
+        physikz.addRandomVelocity(circle, canvas, 25, 25);
         view.addChild(circle);
         circles.push(circle);
         }
 
         // TODO 3 / 7 : Call the drawCircle() function 
         var loopsCompleted = 0; 
-        while (loopsCompleted < 420) {
+        while (loopsCompleted < 10) {
         drawCircle();
         loopsCompleted++
         }
