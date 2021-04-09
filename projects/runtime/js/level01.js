@@ -21,14 +21,27 @@ var level01 = function (window) {
                 { "type": "sawblade", "x": 900, "y": groundY },
             ]
         };
+         /*for (var i = 0; i < levelData.gameItems.length; i++){
+              var firstObj = levelData.gameItems[i];
+              var firstX = firstObj.x;
+              var firstY = firstObj.y;
+              var firstType = firstObj.type;
+
+              if (firstObj.type === "sawblade"){}
+                   creatSawBlade(firstX, firstY);
+                } else if (if)*/
+
+
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
         game.setDebugMode(true);
 
         // TODO 6 and on go here
         // BEGIN EDITING YOUR CODE HERE
-
-        
+         var hitZoneSize = 25;
+        var damageFromObstacle = 10;
+        var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+                    
         
         
         // DO NOT EDIT CODE BELOW HERE

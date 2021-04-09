@@ -1,6 +1,6 @@
-(function (window) {
-    'use strict';
-    
+(function (window) {   
+     'use strict';
+      
     window.opspark = window.opspark || {};
     
     var 
@@ -8,8 +8,8 @@
         createjs = window.createjs;
     
     /*
-
-    Create a heads-up display for our game showing a scoreand an 
+ 
+    Create a heads-up display for our game showing a score and an 
     "integrity meter" which indicates our health. The returned object is a 
     create.js container which can be added to our game using the following code:
       
@@ -25,6 +25,8 @@
                               between [0,100]
     hud.kill() - special animation for the integrity meter when it reaches zero
      */
+ 
+
     window.opspark.makeHud = function () {
         var hud, background, score, of, txtScore, integrity, integrityMeter;
         
