@@ -19,6 +19,9 @@ var level01 = function (window) {
                 { "type": "sawblade", "x": 400, "y": groundY },
                 { "type": "sawblade", "x": 600, "y": groundY },
                 { "type": "sawblade", "x": 900, "y": groundY },
+                { "type": "Spikes_in_Sonic_the_Hedgehog_4(1)", "x": 500, "y": groundY },
+                { "type": "Spikes_in_Sonic_the_Hedgehog_4(1)", "x": 700, "y": groundY },
+                { "type": "Spikes_in_Sonic_the_Hedgehog_4(1)", "x": 1000, "y": groundY },
             ]
         };
          /*for (var i = 0; i < levelData.gameItems.length; i++){
@@ -56,6 +59,31 @@ var level01 = function (window) {
         createSawBlade(700, groundY - 110);
         createSawBlade(800, groundY - 110);
 
+        for (var i = 0; i < levelData.gameItems.length; i++){
+              var gameItemObject = levelData.gameItems[i];
+              if (gameItemObject.type === 'sawblade'){
+                  createSawBlade(gameItemObject.x, gameItemObject.y);
+              } 
+        if (gameItemObject.type === 'Spikes_in_Sonic_the_Hedgehog_4(1)'){
+                  createSpikes(gameItemObject.x, gameItemObject.y);
+              } 
+            }
+            /* spikes*/
+            function createSpikes(x,y) { var hitZoneSize = 25;
+        var damageFromObstacle = 10;
+        var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+        
+        sawBladeHitZone.x = 435;
+        sawBladeHitZone.y = 545;
+       game.addGameItem(sawBladeHitZone);
+
+       var obstacleImage = draw.bitmap('img/Spikes_in_Sonic_the_Hedgehog_4(1).png');
+        sawBladeHitZone.addChild(obstacleImage);
+        obstacleImage.x = -25;
+        obstacleImage.y = -25;
+        obstacleImage.scale
+    };
+        /*enemy*/
         var enemy = game.createGameItem('enemy',25);
         var redSquare = draw.rect(52,52,'purple');
         redSquare.x = -25;
@@ -70,8 +98,14 @@ var level01 = function (window) {
         enemy.velocityX = -1;
 
         enemy.onPlayerCollision = function() {
-    game.change;
+    game.changeIntergrity(-30);
+    enemy.fadeOut();
 };
+
+      enemy.onPlayerCollision = function() {
+          game.increaseScore(69);
+          enemy.fadeOut();
+      };
 
         
         // DO NOT EDIT CODE BELOW HERE
