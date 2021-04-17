@@ -36,7 +36,7 @@ var background = function (window) {
             // TODO: 2 - Part 2
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(1500,649,'LightBlue');
+            var backgroundFill = draw.rect(canvasWidth, groundY,'LightBlue');
             background.addChild(backgroundFill);
             
             // TODO: 3 - Add a moon and starfield- this is the sun.
@@ -53,8 +53,8 @@ var background = function (window) {
             background.addChild(circle);*/
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-             for(var i=0;i<8;++i) {
-                var buildingHeight = 400;
+             for (var i = 0; i < 8; i++) {
+                 
                 var buildingColors = [ "gray","black", "Brown",,"lightYellow","LightPurple","pink","orange"]
                 var buildingDifferantHeights = [ 245, 290, 437, 309, 202, 609, 365]
                 var building = draw.rect(75,buildingDifferantHeights[i], buildingColors[i],'black',1);
@@ -62,7 +62,7 @@ var background = function (window) {
                 building.y = groundY-buildingDifferantHeights[i];
                 background.addChild(building);
                 buildings.push(building);
-}
+            }
             
             // TODO 4: Part 1 - Add a tree
             tree = draw.bitmap('img/tree.png');
@@ -83,17 +83,19 @@ var background = function (window) {
             
             // TODO 4: Part 2 - Move the tree!
              tree.x = tree.x + 1;
+
              if(tree.x < -200) {
                 tree.x = canvasWidth;
             }
             
             // TODO 5: Part 2 - Parallax
+
              for (var i = 0; i < buildings.length; i++) {
-            var building = buildings[i];
-            building.x = building.x - 1;
-            if (building.x < -200){
-                building.x = canvasWidth;
-                }
+                var building = buildings[i];
+                building.x = building.x - 1;
+                if (building.x < -200){
+                    building.x = canvasWidth;
+                    }
             };
 
         } // end of update function - DO NOT DELETE

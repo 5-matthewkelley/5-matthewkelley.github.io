@@ -16,24 +16,24 @@ var level01 = function (window) {
             "number": 1, 
             "speed": -3,
             "gameItems": [
-                { "type": "sawblade", "x": 400, "y": groundY },
-                { "type": "sawblade", "x": 600, "y": groundY },
-                { "type": "sawblade", "x": 900, "y": groundY },
-                { "type": "Spikes_in_Sonic_the_Hedgehog_4(1)", "x": 500, "y": groundY },
-                { "type": "Spikes_in_Sonic_the_Hedgehog_4(1)", "x": 700, "y": groundY },
-                { "type": "Spikes_in_Sonic_the_Hedgehog_4(1)", "x": 1000, "y": groundY },
+                { "type": "sawblade", "x": 600, "y": groundY - 110 },
+                { "type": "sawblade", "x": 700, "y": groundY - 110 },
+                { "type": "sawblade", "x": 800, "y": groundY - 110 },
+                { "type": "spikes", "x": 900, "y": groundY - 30}
             ]
         };
-         /*for (var i = 0; i < levelData.gameItems.length; i++){
-              var firstObj = levelData.gameItems[i];
-              var firstX = firstObj.x;
-              var firstY = firstObj.y;
-              var firstType = firstObj.type;
+        for (var i = 0; i < levelData.gameItems.length; i++){
+              var obj = levelData.gameItems[i];
+              var objX = obj.x;
+              var objY = obj.y;
+              var objType = obj.type;
 
-              if (firstObj.type === "sawblade"){}
-                   creatSawBlade(firstX, firstY);
-                } else if (if)*/
-
+              if (objType === "sawblade"){
+                   createSawBlade(objX, objY);
+                } else {
+                   createSpikes(objX, objY);
+                }
+        }
 
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
@@ -43,70 +43,60 @@ var level01 = function (window) {
         // BEGIN EDITING YOUR CODE HERE
         /* This is the function*/
         function createSawBlade (x, y){ var hitZoneSize = 25;
-        var damageFromObstacle = 10;
-        var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
-        
-        sawBladeHitZone.x = 435;
-        sawBladeHitZone.y = 545;
-       game.addGameItem(sawBladeHitZone);
+            var damageFromObstacle = 10;
+            var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+            
+            sawBladeHitZone.x = x;
+            sawBladeHitZone.y = y;
+            game.addGameItem(sawBladeHitZone);
 
-       var obstacleImage = draw.bitmap('img/sawblade.png');
-        sawBladeHitZone.addChild(obstacleImage);
-        obstacleImage.x = -25;
-        obstacleImage.y = -25;
-    }
-        createSawBlade(600, groundY - 110);
-        createSawBlade(700, groundY - 110);
-        createSawBlade(800, groundY - 110);
-
-        for (var i = 0; i < levelData.gameItems.length; i++){
-              var gameItemObject = levelData.gameItems[i];
-              if (gameItemObject.type === 'sawblade'){
-                  createSawBlade(gameItemObject.x, gameItemObject.y);
-              } 
-        if (gameItemObject.type === 'Spikes_in_Sonic_the_Hedgehog_4(1)'){
-                  createSpikes(gameItemObject.x, gameItemObject.y);
-              } 
-            }
+            var obstacleImage = draw.bitmap('img/sawblade.png');
+            sawBladeHitZone.addChild(obstacleImage);
+            obstacleImage.x = -25;
+            obstacleImage.y = -25;
+        }       
             /* spikes*/
-            function createSpikes(x,y) { var hitZoneSize = 25;
-        var damageFromObstacle = 10;
-        var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
-        
-        sawBladeHitZone.x = 435;
-        sawBladeHitZone.y = 545;
-       game.addGameItem(sawBladeHitZone);
+            function createSpikes(x,y) { 
+                var hitZoneSize = 20;
+                var damageFromObstacle = 10;
+                var spikesHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+                
+                spikesHitZone.x = x;
+                spikesHitZone.y = y;
+                game.addGameItem(spikesHitZone);
 
-       var obstacleImage = draw.bitmap('img/Spikes_in_Sonic_the_Hedgehog_4(1).png');
-        sawBladeHitZone.addChild(obstacleImage);
-        obstacleImage.x = -25;
-        obstacleImage.y = -25;
-        obstacleImage.scale
-    };
+                var obstacleImage = draw.bitmap('img/spikes.png');
+                spikesHitZone.addChild(obstacleImage);
+                obstacleImage.x = -35;
+                obstacleImage.y = -55;
+            };
+
+
         /*enemy*/
-        var enemy = game.createGameItem('enemy',25);
-        var redSquare = draw.rect(52,52,'purple');
-        redSquare.x = -25;
-        redSquare.y = -25;
-        enemy.addChild(redSquare);
+            function createEnemy(x, y){
+                var enemy = game.createGameItem('enemy',25);
+                var redSquare = draw.rect(52,52,'purple');
+                redSquare.x = -25;
+                redSquare.y = -25;
+                enemy.addChild(redSquare);
 
-        enemy.x = 400;
-        enemy.y = groundY-50;
+                enemy.x = 400;
+                enemy.y = groundY-50;
 
-        game.addGameItem(enemy);
+                game.addGameItem(enemy);
 
-        enemy.velocityX = -1;
+                enemy.velocityX = -1;
 
-        enemy.onPlayerCollision = function() {
-    game.changeIntergrity(-30);
-    enemy.fadeOut();
-};
+                enemy.onPlayerCollision = function() {
+                    game.changeIntergrity(-30);
+                    enemy.fadeOut();
+                };
 
-      enemy.onPlayerCollision = function() {
-          game.increaseScore(69);
-          enemy.fadeOut();
-      };
-
+                enemy.onPlayerCollision = function() {
+                    game.increaseScore(69);
+                    enemy.fadeOut();
+                };
+            }
         
         // DO NOT EDIT CODE BELOW HERE
     }
