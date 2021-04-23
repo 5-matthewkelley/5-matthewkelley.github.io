@@ -57,5 +57,27 @@
                 init(window);
             })();
         </script>
+        
+         var myAudio = document.getElementById("audio"); 
+
+    function playAudio() { 
+          myAudio.play(); 
+          //console.log(audio.play())
+           if (myAudio.paused && myAudio.currentTime >= 0 && !myAudio.started) {
+         myAudio.play();
+         console.log("started");
+     } //else {
+         //myAudio.pause();
+     //}
+}
+            
+            
+        </script>
+        <audio controls autoplay loop hidden id="audio">
+    <source src="Megalovaina.mp3" type="audio/mpeg">
+</audio>
+     
+       
+      
     </body>
 </html>
