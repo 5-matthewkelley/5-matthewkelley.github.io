@@ -19,7 +19,10 @@ var level01 = function (window) {
                 { "type": "sawblade", "x": 600, "y": groundY - 110 },
                 { "type": "sawblade", "x": 700, "y": groundY - 110 },
                 { "type": "sawblade", "x": 800, "y": groundY - 110 },
-                { "type": "spikes", "x": 900, "y": groundY - 30}
+                { "type": "spikes", "x": 900, "y": groundY - 30},
+                { "type": "spikes", "x": 1200, "y": groundY - 30},
+                { "type": "spikes", "x": 1500, "y": groundY - 30},
+                { "type" :"redSquare", "x": 400, "y": groundY - 50 },
             ]
         };
         for (var i = 0; i < levelData.gameItems.length; i++){
@@ -30,7 +33,9 @@ var level01 = function (window) {
 
               if (objType === "sawblade"){
                    createSawBlade(objX, objY);
-                } else {
+               }  else if (objType === "redSquare"){
+                   createEnemy(objX, objY);
+               }   else {
                    createSpikes(objX, objY);
                 }
         }
@@ -75,13 +80,13 @@ var level01 = function (window) {
         /*enemy*/
             function createEnemy(x, y){
                 var enemy = game.createGameItem('enemy',25);
-                var redSquare = draw.rect(52,52,'purple');
+                var redSquare = draw.rect(52,52,'red');
                 redSquare.x = -25;
                 redSquare.y = -25;
                 enemy.addChild(redSquare);
 
-                enemy.x = 400;
-                enemy.y = groundY-50;
+                enemy.x = x;
+                enemy.y = y;
 
                 game.addGameItem(enemy);
 
@@ -97,7 +102,7 @@ var level01 = function (window) {
                     enemy.fadeOut();
                 };
             }
-        
+            
         // DO NOT EDIT CODE BELOW HERE
     }
 };

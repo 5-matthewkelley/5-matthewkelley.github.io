@@ -59,3 +59,31 @@
         </script>
     </body>
 </html>
+ <script id="index">
+            var audio = document.getElementById("audio");
+            (function(){
+                'use strict';
+                background(window);
+                level01(window);
+                init(window);
+            })();
+            
+            
+       var myAudio = document.getElementById("audio"); 
+
+    function playAudio() { 
+          myAudio.play(); 
+          //console.log(audio.play())
+           if (myAudio.paused && myAudio.currentTime >= 0 && !myAudio.started) {
+         myAudio.play();
+         console.log("started");
+     } //else {
+         //myAudio.pause();
+     //}
+}
+            
+            
+        </script>
+        <audio controls autoplay loop hidden id="audio">
+    <source src="Megalovania.mp3 " type="audio/mpeg"> //smh
+</audio>
