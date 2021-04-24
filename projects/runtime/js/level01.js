@@ -23,6 +23,10 @@ var level01 = function (window) {
                 { "type": "spikes", "x": 1200, "y": groundY - 30},
                 { "type": "spikes", "x": 1500, "y": groundY - 30},
                 { "type" :"redSquare", "x": 400, "y": groundY - 50 },
+                { "type": "reward", "x": 1000, "y": groundY - 50, "health": 10},
+                { "type": "sawblade", "x": 1600, "y": groundY},
+                { "type": "sawblade", "x": 1800, "y": groundY},
+                { "type": "sawblade", "x": 2000, "y": groundY},
             ]
         };
         for (var i = 0; i < levelData.gameItems.length; i++){
@@ -35,7 +39,9 @@ var level01 = function (window) {
                    createSawBlade(objX, objY);
                }  else if (objType === "redSquare"){
                    createEnemy(objX, objY);
-               }   else {
+                } else if (objType.type === "reward") {
+                createPrize(x,y,objType.health);
+                } else {
                    createSpikes(objX, objY);
                 }
         }
@@ -102,7 +108,32 @@ var level01 = function (window) {
                     enemy.fadeOut();
                 };
             }
-            
+            /*healing*/
+            function createPrize(x, y, health) {
+            var prize = game.createGameItem('prize', 25);
+            var greenSquare = draw.rect(50,50,'green');
+            greenSquare.x = -25;
+            greenSquare.y = -25;
+            prize.addChild(greenSquare);
+            prize.x = x;
+            prize.y = y;
+            prize.velocityX = -1
+
+            game.addGameItem(prize);
+            prize.onPlayerCollision = function() {
+                game.changeIntegrity(health);
+                game.increaseScore(100);
+                prize.fadeOut();
+            }
+            prize.onProjectileCollision = function () {
+                prize.shrink();
+                createPrize(prize.x, prize.y, health);
+            }
+        }
+            var obstacleImage = draw.bitmap('img/sawblade.png');
+            HealthHitZone.addChild(obstacleImage);
+            obstacleImage.x = -25;
+            obstacleImage.y = -25;
         // DO NOT EDIT CODE BELOW HERE
     }
 };
