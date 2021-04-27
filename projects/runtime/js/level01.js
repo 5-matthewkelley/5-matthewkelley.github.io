@@ -27,6 +27,19 @@ var level01 = function (window) {
                 { "type": "sawblade", "x": 1600, "y": groundY},
                 { "type": "sawblade", "x": 1800, "y": groundY},
                 { "type": "sawblade", "x": 2000, "y": groundY},
+                { "type": "sawblade", "x": 2200, "y": groundY - 110 },
+                { "type": "spikes", "x": 2350, "y": groundY - 30},
+                { "type" :"redSquare", "x": 1800, "y": groundY - 50 },
+                { "type" :"redSquare", "x": 1660, "y": groundY - 50 },
+                { "type": "sawblade", "x": 2850, "y": groundY - 110 },
+                { "type": "sawblade", "x": 3050, "y": groundY - 110 },
+                { "type": "sawblade", "x": 3250, "y": groundY - 110 },
+                { "type" :"redSquare", "x": 1870, "y": groundY - 50 },
+                { "type" :"redSquare", "x": 1550, "y": groundY - 50 },
+                { "type" :"redSquare", "x": 1440, "y": groundY - 50 },
+                { "type": "reward", "x": 1985, "y": groundY - 50},
+                 { "type": "sawblade", "x": 2650, "y": groundY - 110 },
+                
             ]
         };
         for (var i = 0; i < levelData.gameItems.length; i++){
