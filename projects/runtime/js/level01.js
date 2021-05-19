@@ -38,7 +38,8 @@ var level01 = function (window) {
                 { "type" :"redSquare", "x": 1550, "y": groundY - 50 },
                 { "type" :"redSquare", "x": 1440, "y": groundY - 50 },
                 { "type": "reward", "x": 1985, "y": groundY - 50},
-                 { "type": "sawblade", "x": 2650, "y": groundY - 110 },
+                { "type": "sawblade", "x": 2650, "y": groundY - 110 },
+                { "type": "spikes", "x": 1500, "y": groundY - 30},
                 
             ]
         };
