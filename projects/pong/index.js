@@ -243,18 +243,18 @@ $(document).ready(function() {
 
 	// stops the paddles' movement after it has been pressed
 	//might keep it out on purpose
-	function stopspeed(event) {
-		if (event.which === KEY.W || event.which === KEY.S) {
-			paddle1.speedY = 0; 
-		}
+	//function stopspeed(event) {
+		//if (event.which === KEY.W || event.which === KEY.S) {
+			//paddle1.speedY = 0; 
+		//}
 
 	
 
-		if (event.which === KEY.UP || event.which === KEY.DOWN) {
-			paddle2.speedY = 0; 
-		}
+		//if (event.which === KEY.UP || event.which === KEY.DOWN) {
+			//paddle2.speedY = 0; 
+		//}
 
-	}
+	//}
   
 
 });
