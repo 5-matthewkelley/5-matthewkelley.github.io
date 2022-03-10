@@ -112,7 +112,7 @@ $(document).ready(function() {
 	// makes sure that when the ball hit a wall it score a point for the oposing side and re-centers the ball to be in the middle. This code also ends the game when the score is 11 for either side
 	function ballCollidescore() {
 		if (ball.x >= BOARD_WIDTH - ball.width) {
-			   // paddle2 scores
+			   // paddle2 score
 			   paddleScore(paddle2);
 			   resetBall();
 			   
@@ -122,7 +122,7 @@ $(document).ready(function() {
 			  
 		   }
 		   if (ball.x <= BOARD_WIDTH - BOARD_WIDTH) {
-			   // paddle1 scores
+			   // paddle1 score
 			   paddleScore(paddle1);
 			   resetBall();
 			 
