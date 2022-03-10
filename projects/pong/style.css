@@ -1,0 +1,82 @@
+body {
+  background-color: black;
+  overflow: hidden;
+}
+#board {
+  position: relative;
+  margin: auto;
+  width: 800px;
+  height: 400px;
+  border: 10px solid rgb(207, 93, 17);
+}
+
+#paddle1 { 
+    background-color: rgb(25, 86, 104);
+    position: absolute;
+    width: 14px;
+    height: 69px;
+}
+
+#paddle2 { 
+    background-color: rgb(179, 14, 91);
+    position: absolute;
+    width: 14px;
+    height: 69px;
+}
+
+#ball {
+  background-color: rgb(2, 255, 221);
+  width: 27px;
+  height: 27px;
+  border-radius: 50px;
+  position: absolute;
+}
+#paddle1Score {
+  right: 210px;
+  top: 50px;
+  position: absolute;
+  font-size: 4.5vw;
+  font-family: 'VT323', Hack;
+  color: rgb(25, 86, 104);
+}
+
+#paddle2Score {
+  left: 210px;
+  top: 50px;
+  position: absolute;
+  font-size: 4.5vw;
+  font-family: 'VT323', Hack;
+  color:rgb(179, 14, 91);
+}
+#paddle1Title {
+  left: 10px;
+  position: absolute;
+  font-size: 2.5vw;
+  font-family: 'VT323', Hack;
+  color: rgb(25, 86, 104);
+}
+
+#paddle2Title {
+  right: 10px;
+  position: absolute;
+  font-size: 2.5vw;
+  font-family: 'VT323', Hack;
+  color:rgb(179, 14, 91);
+}
+#paddleWinScreen {
+  left: 300px;
+  top: 150px;
+  position: absolute;
+  font-size: 4.5vw;
+  font-family: 'VT323', Hack;
+  color: rgb(57, 3, 94);
+}
+#Rematch {
+  left: 300px;
+  top: 350px;
+  background-color: rgb(196, 38, 38);
+  position: absolute; 
+  font-size: 32px;
+  font-family: 'VT323', Hack;
+  text-align: center;
+}
