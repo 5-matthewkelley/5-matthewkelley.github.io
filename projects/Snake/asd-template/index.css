@@ -1,0 +1,62 @@
+body {
+  background-color: black;
+}
+
+#board {
+  width: 600px;
+  height: 600px;
+  /*border: 1px solid white;*/
+  background-color: black;
+  position: relative;
+  left: 30%;
+  /* background-image: url("checker.png"); */
+
+}
+
+.snake , #snake {
+  background-color: rgb(17, 134, 125);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+#apple {
+  background-color:rgb(24, 133, 21);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+.score {
+  left: 25%;
+  top: 6.25%;
+  font-size: 2.5vw;
+  font-family: 'VT323', Hack;
+  color: white;    
+}
+
+.grid {
+  width: 600px;
+  height: 600px;
+  border: 1px solid white;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid div {
+  width: 20px;
+  height: 20px;
+  border:1px white solid;
+  box-sizing:border-box
+}
+
+#playAgain {
+  left: 270px;
+  top: 200px;
+  background-color: rgb(3, 65, 158);
+  position: absolute; 
+  font-size: 64px;
+  font-family: 'VT323', Hack;
+  text-align: center;
+}
