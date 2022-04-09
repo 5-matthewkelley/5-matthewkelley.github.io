@@ -9,19 +9,19 @@ body {
   background-color: black;
   position: relative;
   left: 30%;
-  /* background-image: url("checker.png"); */
+  
 
 }
 
 .snake , #snake {
-  background-color: rgb(17, 134, 125);
+  background-color: rgb(235, 223, 232);
   width: 20px;
   height: 20px;
   position: absolute;
 }
 
 #apple {
-  background-color:rgb(24, 133, 21);
+  background-color:rgb(63, 181, 59);
   width: 20px;
   height: 20px;
   position: absolute;
@@ -30,7 +30,7 @@ body {
 .score {
   left: 25%;
   top: 6.25%;
-  font-size: 2.5vw;
+  font-size: 5vw;
   font-family: 'VT323', Hack;
   color: white;    
 }
@@ -38,7 +38,7 @@ body {
 .grid {
   width: 600px;
   height: 600px;
-  border: 1px solid white;
+  border: 5px solid red;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -51,10 +51,10 @@ body {
   box-sizing:border-box
 }
 
-#playAgain {
-  left: 270px;
-  top: 200px;
-  background-color: rgb(3, 65, 158);
+#Rematch {
+  left: 640px;
+  top: 350px;
+  background-color: rgb(227, 99, 19);
   position: absolute; 
   font-size: 64px;
   font-family: 'VT323', Hack;
